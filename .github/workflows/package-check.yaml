@@ -1,0 +1,39 @@
+name: Package and locked dependencies
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    container:
+      image: rocker/r2u:24.04@sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92
+    env:
+      # Disable r2u's site startup hook so all R packages come from renv.
+      R_PROFILE: /dev/null
+      R_LIBS_SITE: /tmp/quickped-no-site
+      R_LIBS_USER: /tmp/quickped-library
+      RENV_PATHS_LIBRARY: /tmp/quickped-library
+      RENV_PATHS_CACHE: /tmp/quickped-cache
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install system build dependencies
+        run: |
+          apt-get update -qq
+          apt-get install -y --no-install-recommends curl libuv1-dev
+      - name: Restore the committed lockfile
+        run: >-
+          Rscript --vanilla -e 'source("renv/activate.R");
+          renv::restore(prompt = FALSE);
+          stopifnot(renv::status()$synchronized)'
+      - name: Build and check the installed package
+        run: |
+          R CMD build . --no-build-vignettes
+          R CMD check --no-manual --no-build-vignettes quickped_*.tar.gz
+          grep -q '^Status: OK' quickped.Rcheck/00check.log

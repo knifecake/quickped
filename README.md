@@ -9,6 +9,26 @@
 
 </div>
 
+## Run locally or install as an R package
+
+Restore the declared and locked dependencies from this checkout:
+
+```r
+renv::restore(prompt = FALSE)
+```
+
+To develop or deploy from source, use `shiny::runApp(".")`. To install the
+package into the active project library and launch it:
+
+```r
+install.packages(".", repos = NULL, type = "source")
+quickped::runQuickPed()
+```
+
+`quickped::quickpedApp()` returns an app object for embedding or custom hosting.
+See [the package and dependency guide](docs/package-development.md) for build,
+check and dependency-update instructions.
+
 ## What is QuickPed?
 
 QuickPed is an interactive web application for drawing and analysing
@@ -37,7 +57,7 @@ attributes like sex, affection status, twin status and ID labels.
 - **Selecting individuals**. Select/deselect pedigree members by
   clicking on them. Selected individuals are shown in red colour. To
   deselect everyone, click the
-  <img src="www/hand-pointer-strikethrough.svg" height = "18px" width = "18px" style="border: 1px solid gray; border-radius: 3px;">
+  <img src="inst/app/www/hand-pointer-strikethrough.svg" height = "18px" width = "18px" style="border: 1px solid gray; border-radius: 3px;">
   button.
 
 - **Adding parents**. If you select a single founder and click “Add

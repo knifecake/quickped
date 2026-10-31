@@ -1,0 +1,15 @@
+^\.git$
+^\.github$
+^\.gitignore$
+^\.Rprofile$
+^\.Rbuildignore$
+^\.rsconnect_profile$
+^app\.R$
+^docs$
+^LICENSE$
+^README\.Rmd$
+^README_files$
+^renv$
+^renv\.lock$
+^rsconnect$
+^quickped\.Rproj$

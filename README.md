@@ -9,25 +9,6 @@
 
 </div>
 
-## Run locally or install as an R package
-
-Restore the declared and locked dependencies from this checkout:
-
-``` r
-renv::restore(prompt = FALSE)
-```
-
-To develop or deploy from source, use `shiny::runApp(".")`. To install
-the package into the active project library and launch it:
-
-``` r
-install.packages(".", repos = NULL, type = "source")
-quickped::runQuickPed()
-```
-
-`quickped::quickpedApp()` returns an app object for embedding or custom
-hosting.
-
 ## What is QuickPed?
 
 QuickPed is an interactive web application for drawing and analysing
@@ -50,6 +31,25 @@ ped file (see below). Modifications are done by clicking on one or
 several individuals and then applying appropriate buttons, for instance
 to add children, siblings or parents. At any time you may change
 attributes like sex, affection status, twin status and ID labels.
+
+## Run locally or install as an R package
+
+Restore the declared and locked dependencies from this checkout:
+
+``` r
+renv::restore(prompt = FALSE)
+```
+
+To develop or deploy from source, use `shiny::runApp(".")`. To install
+the package into the active project library and launch it:
+
+``` r
+install.packages(".", repos = NULL, type = "source")
+quickped::runQuickPed()
+```
+
+`quickped::quickpedApp()` returns an app object for embedding or custom
+hosting.
 
 ## Tips and tricks
 

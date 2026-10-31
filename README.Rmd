@@ -19,6 +19,15 @@ knitr::opts_chunk$set(
 **_Try QuickPed here_**: https://magnusdv.shinyapps.io/quickped.
 :::
 
+## What is QuickPed?
+QuickPed is an interactive web application for drawing and analysing pedigrees. A created pedigree may be saved as an image, as a *.ped* file (see [below](#ped-files)) or in the form of R code to reproduce the plot. You may also obtain various information about the pedigree, including relatedness coefficients and verbal descriptions of relationships.
+
+QuickPed is powered by the [pedsuite](https://magnusdv.github.io/pedsuite/), and uses [kinship2](https://CRAN.R-project.org/package=kinship2) for plot alignment calculations. The web app was built with Shiny.
+
+
+## Getting started
+Creating pedigrees with QuickPed is very intuitive: Select a suitable start pedigree and modify it as needed. You may also load an existing ped file (see below). Modifications are done by clicking on one or several individuals and then applying appropriate buttons, for instance to add children, siblings or parents. At any time you may change attributes like sex, affection status, twin status and ID labels.
+
 ## Run locally or install as an R package
 
 Restore the declared and locked dependencies from this checkout:
@@ -36,15 +45,6 @@ quickped::runQuickPed()
 ```
 
 `quickped::quickpedApp()` returns an app object for embedding or custom hosting.
-
-## What is QuickPed?
-QuickPed is an interactive web application for drawing and analysing pedigrees. A created pedigree may be saved as an image, as a *.ped* file (see [below](#ped-files)) or in the form of R code to reproduce the plot. You may also obtain various information about the pedigree, including relatedness coefficients and verbal descriptions of relationships.
-
-QuickPed is powered by the [pedsuite](https://magnusdv.github.io/pedsuite/), and uses [kinship2](https://CRAN.R-project.org/package=kinship2) for plot alignment calculations. The web app was built with Shiny.
-
-
-## Getting started
-Creating pedigrees with QuickPed is very intuitive: Select a suitable start pedigree and modify it as needed. You may also load an existing ped file (see below). Modifications are done by clicking on one or several individuals and then applying appropriate buttons, for instance to add children, siblings or parents. At any time you may change attributes like sex, affection status, twin status and ID labels. 
 
 ## Tips and tricks
 

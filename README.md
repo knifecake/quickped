@@ -13,21 +13,20 @@
 
 Restore the declared and locked dependencies from this checkout:
 
-```r
+``` r
 renv::restore(prompt = FALSE)
 ```
 
-To develop or deploy from source, use `shiny::runApp(".")`. To install the
-package into the active project library and launch it:
+To develop or deploy from source, use `shiny::runApp(".")`. To install
+the package into the active project library and launch it:
 
-```r
+``` r
 install.packages(".", repos = NULL, type = "source")
 quickped::runQuickPed()
 ```
 
-`quickped::quickpedApp()` returns an app object for embedding or custom hosting.
-See [the package and dependency guide](docs/package-development.md) for build,
-check and dependency-update instructions.
+`quickped::quickpedApp()` returns an app object for embedding or custom
+hosting.
 
 ## What is QuickPed?
 
@@ -163,7 +162,7 @@ software for pedigree analysis.
 
 For a simple illustration, consider this pedigree:
 
-<img src="README_files/figure-gfm/trio-ped-1.png" width="25%" style="display: block; margin: auto;" />
+<img src="README_files/figure-gfm/trio-ped-1.png" alt="" width="25%" style="display: block; margin: auto;" />
 
 A text file describing this pedigree may contain the following.
 

@@ -4,5 +4,10 @@
 .httr-oauth
 Rprof.out
 .positai
+renv/library/
+renv/staging/
+renv/local/
+renv/python/
+renv/sandbox/
 *.Rcheck/
 quickped_*.tar.gz

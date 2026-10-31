@@ -34,11 +34,10 @@ attributes like sex, affection status, twin status and ID labels.
 
 ## Run locally or install as an R package
 
-Install the dependencies declared in `DESCRIPTION`:
+Restore the declared and locked dependencies from this checkout:
 
 ``` r
-install.packages("remotes")
-remotes::install_deps(dependencies = TRUE)
+renv::restore(prompt = FALSE)
 ```
 
 To develop or deploy from source, use `shiny::runApp(".")`. To install
